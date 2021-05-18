@@ -22,6 +22,8 @@ https://www.mygreatlearning.com/blog/python-interview-questions/
 
 https://www.guru99.com/python-interview-questions-answers.html
 
+https://www.guru99.com/data-science-interview-questions.html
+
 https://www.edureka.co/blog/interview-questions/python-interview-questions/
 
 https://www.interviewbit.com/python-interview-questions/
