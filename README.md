@@ -72,3 +72,22 @@ https://medium.com/analytics-vidhya/80-interview-questions-on-python-for-data-sc
 https://www.simplilearn.com/tutorials/data-science-tutorial/data-science-interview-questions
 
 https://towardsdatascience.com/top-30-data-science-interview-questions-7dd9a96d3f5c
+
+
+### MACHINE LEARNING
+
+https://www.interviewbit.com/machine-learning-interview-questions/
+
+https://www.analyticsvidhya.com/blog/2017/07/30-questions-to-test-a-data-scientist-on-linear-regression/
+
+https://www.digitalvidya.com/blog/most-commonly-asked-interview-questions-on-linear-regression/
+
+https://medium.com/subhrajit-roy/cracking-the-machine-learning-interview-1d8c5bb752d8
+
+https://www.mygreatlearning.com/blog/machine-learning-interview-questions/
+
+https://www.springboard.com/blog/ai-machine-learning/machine-learning-interview-questions/
+
+https://medium.com/@springboard_ind/most-asked-ai-ml-interview-questions-in-india-6db723cc7578
+
+https://medium.com/swlh/cheat-sheets-for-machine-learning-interview-topics-51c2bc2bab4f
