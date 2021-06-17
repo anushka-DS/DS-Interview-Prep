@@ -76,6 +76,10 @@ https://towardsdatascience.com/top-30-data-science-interview-questions-7dd9a96d3
 
 ### MACHINE LEARNING
 
+https://medium.com/swlh/20-essential-ml-questions-answered-6bf61f8b1aa6
+
+https://towardsdatascience.com/more-microsoft-data-science-interview-questions-and-answers-f9ee8337072c
+
 https://www.interviewbit.com/machine-learning-interview-questions/
 
 https://www.analyticsvidhya.com/blog/2017/07/30-questions-to-test-a-data-scientist-on-linear-regression/
