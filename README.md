@@ -1,377 +1,237 @@
-# Interview Questions from [Data Science Prep](https://datascienceprep.com/)
----
+# Machine Learning Interview Questions
+A collection of technical interview questions for machine learning and computer vision engineering positions.
 
-## [Probability] Unfair Coin: Facebook [Easy]
+#### 1) What's the trade-off between bias and variance? [[src](http://houseofbots.com/news-detail/2849-4-data-science-and-machine-learning-interview-questions)]
 
-There is a fair coin (one side heads, one side tails) and an unfair coin (both sides tails). You pick one at random, flip it 5 times, and observe that it comes up as tails all five times.  Whatis the chance that you are flipping the unfair coin? 
+If our model is too simple and has very few parameters then it may have high bias and low variance. On the other hand if our model has large number of parameters then it’s going to have high variance and low bias. So we need to find the right/good balance without overfitting and underfitting the data. [[src]](https://towardsdatascience.com/understanding-the-bias-variance-tradeoff-165e6942b229)
 
-### Solution 
-Question 1 in the `pdf` file.
+#### 2) What is gradient descent? [[src](http://houseofbots.com/news-detail/2849-4-data-science-and-machine-learning-interview-questions)]
+[[Answer]](https://towardsdatascience.com/gradient-descent-in-a-nutshell-eaf8c18212f0)
 
----
+#### 3) Explain over- and under-fitting and how to combat them? [[src](http://houseofbots.com/news-detail/2849-4-data-science-and-machine-learning-interview-questions)]
+[[Answer]](https://towardsdatascience.com/overfitting-vs-underfitting-a-complete-example-d05dd7e19765)
 
-## [Coding] Sampling with weights: Lyft [Medium]
+#### 4) How do you combat the curse of dimensionality? [[src](http://houseofbots.com/news-detail/2849-4-data-science-and-machine-learning-interview-questions)]
 
-Say we are given a list of several categories
-(for example, the strings: A, B, C, and D) and want to sample from a
-list of such categories according to a particular weighting scheme.
-Such an example would be: for 100 items total,
-we want to see A 20% of the time, B 15% of the time, C 35% of the time,
-and D 30% of the time. How do we simulate this?
-What if we care about an arbitrary number of categories and about memory usage?
+ - Manual Feature Selection
+ - Principal Component Analysis (PCA)
+ - Multidimensional Scaling
+ - Locally linear embedding  
+[[src]](https://towardsdatascience.com/why-and-how-to-get-rid-of-the-curse-of-dimensionality-right-with-breast-cancer-dataset-7d528fb5f6c0)
 
-### Solution 
-Code is [here.](https://github.com/adijo/data-science-prep/blob/master/code/sampling_with_weights.py)
+#### 5) What is regularization, why do we use it, and give some examples of common methods? [[src](http://houseofbots.com/news-detail/2849-4-data-science-and-machine-learning-interview-questions)]
+A technique that discourages learning a more complex or flexible model, so as to avoid the risk of overfitting. 
+Examples
+ - Ridge (L2 norm)
+ - Lasso (L1 norm)  
+The obvious *disadvantage* of **ridge** regression, is model interpretability. It will shrink the coefficients for least important predictors, very close to zero. But it will never make them exactly zero. In other words, the *final model will include all predictors*. However, in the case of the **lasso**, the L1 penalty has the effect of forcing some of the coefficient estimates to be *exactly equal* to zero when the tuning parameter λ is sufficiently large. Therefore, the lasso method also performs variable selection and is said to yield sparse models.
+[[src]](https://towardsdatascience.com/regularization-in-machine-learning-76441ddcf99a)
 
----
+#### 6) Explain Principal Component Analysis (PCA)? [[src](http://houseofbots.com/news-detail/2849-4-data-science-and-machine-learning-interview-questions)]
+[[Answer]](https://towardsdatascience.com/a-one-stop-shop-for-principal-component-analysis-5582fb7e0a9c)
 
-## [Probability] Flips until two heads: Lyft [Medium]
+#### 7) Why is ReLU better and more often used than Sigmoid in Neural Networks? [[src](http://houseofbots.com/news-detail/2849-4-data-science-and-machine-learning-interview-questions)]
+Imagine a network with random initialized weights ( or normalised ) and almost 50% of the network yields 0 activation because of the characteristic of ReLu ( output 0 for negative values of x ). This means a fewer neurons are firing ( sparse activation ) and the network is lighter. [[src]](https://medium.com/the-theory-of-everything/understanding-activation-functions-in-neural-networks-9491262884e0)
 
-This problem was asked by Lyft.
 
-What is the expected number of coin flips needed to get two consecutive heads?
+#### 8) Given stride S and kernel sizes  for each layer of a (1-dimensional) CNN, create a function to compute the [receptive field](https://www.quora.com/What-is-a-receptive-field-in-a-convolutional-neural-network) of a particular node in the network. This is just finding how many input nodes actually connect through to a neuron in a CNN. [[src](https://www.reddit.com/r/computervision/comments/7gku4z/technical_interview_questions_in_cv/)]
 
-### Solution 
+#### 9) Implement [connected components](http://aishack.in/tutorials/labelling-connected-components-example/) on an image/matrix. [[src](https://www.reddit.com/r/computervision/comments/7gku4z/technical_interview_questions_in_cv/)]
 
-Analytical solution in the Question 2 section in the `pdf` file. Empirical evaluation is [here.](https://github.com/adijo/data-science-prep/blob/master/code/expected_flips_two_heads.py)
 
----
+#### 10) Implement a sparse matrix class in C++. [[src](https://www.reddit.com/r/computervision/comments/7gku4z/technical_interview_questions_in_cv/)]
 
-## [Statistics] Drawing normally: Quora [Medium]
 
-You are drawing from a normally distributed random variable X ~ N(0, 1) once a day. What is the approximate expected number of days until you get a value of more than 2?
+#### 11) Create a function to compute an [integral image](https://en.wikipedia.org/wiki/Summed-area_table), and create another function to get area sums from the integral image.[[src](https://www.reddit.com/r/computervision/comments/7gku4z/technical_interview_questions_in_cv/)]
 
-### Solution
-Analytical solution in the Question 3 section of the `pdf` file. Empirical evaluation is [here.](https://github.com/adijo/data-science-prep/blob/master/code/expected_days_normal_distribution.py)
 
----
+#### 12) How would you [remove outliers](https://en.wikipedia.org/wiki/Random_sample_consensus) when trying to estimate a flat plane from noisy samples? [[src](https://www.reddit.com/r/computervision/comments/7gku4z/technical_interview_questions_in_cv/)]
 
-## [SQL] Ad CTR: Facebook [Easy]
-Assume you have the below events table on app analytics. Write a query to get the click-through rate per app in 2019.
-```sqlite-sql
-column_name	type
-app_id	        integer
-event_id	string ("impression", "click")
-timestamp	datetime
-```
+#### 13) How does [CBIR](https://www.robots.ox.ac.uk/~vgg/publications/2013/arandjelovic13/arandjelovic13.pdf) work? [[src](https://www.reddit.com/r/computervision/comments/7gku4z/technical_interview_questions_in_cv/)]
 
-### Solution
-SQL query is [here.](https://github.com/adijo/data-science-prep/blob/master/code/ctr_calculation.sql)
+#### 14) How does image registration work? Sparse vs. dense [optical flow](http://www.ncorr.com/download/publications/bakerunify.pdf) and so on. [[src](https://www.reddit.com/r/computervision/comments/7gku4z/technical_interview_questions_in_cv/)]
 
----
+#### 15) Describe how convolution works. What about if your inputs are grayscale vs RGB imagery? What determines the shape of the next layer? [[src](https://www.reddit.com/r/computervision/comments/7gku4z/technical_interview_questions_in_cv/)]
 
-## [Statistics] Is the coin biased?: Google [Medium]
-A coin was flipped 1000 times, and 550 times it showed up heads. Do you think the coin is biased? Why or why not?
+#### 16) Talk me through how you would create a 3D model of an object from imagery and depth sensor measurements taken at all angles around the object. [[src](https://www.reddit.com/r/computervision/comments/7gku4z/technical_interview_questions_in_cv/)]
 
-### Solution
-Solution is in the Question 4 section of the `pdf` file. The computation is [here.](https://github.com/adijo/data-science-prep/blob/master/code/Is%20this%20coin%20biased%3F.ipynb) I've also added an additional Bayesian Modeling approach to this problem using `pymc3` [here.](https://github.com/adijo/data-science-prep/blob/master/code/Bayesian%20Modelling%20Coin%20Flips.ipynb)
+#### 17) Implement SQRT(const double & x) without using any special functions, just fundamental arithmetic. [[src](https://www.reddit.com/r/computervision/comments/7gku4z/technical_interview_questions_in_cv/)]
 
----
+#### 18) Reverse a bitstring. [[src](https://www.reddit.com/r/computervision/comments/7gku4z/technical_interview_questions_in_cv/)]
 
-## [Probability] Rolls to see all sides: Facebook [Medium]
-What is the expected number of rolls needed to see all 6 sides of a fair die?
+#### 19) Implement non maximal suppression as efficiently as you can. [[src](https://www.reddit.com/r/computervision/comments/7gku4z/technical_interview_questions_in_cv/)]
 
-### Solution
-Solution is in the Question 5 section of the `pdf` file.
- 
---- 
+#### 20) Reverse a linked list in place. [[src](https://www.reddit.com/r/computervision/comments/7gku4z/technical_interview_questions_in_cv/)]
 
-## [Statistics] Picking between two dice games: Facebook [Hard]
-There are two games involving dice that you can play. In the first game, you roll two die at once and get the dollar amount equivalent to the product of the rolls. In the second game, you roll one die and get the dollar amount equivalent to the square of that value. Which has the higher expected value and why?
+#### 21) What is data normalization and why do we need it? [[src](http://houseofbots.com/news-detail/2849-4-data-science-and-machine-learning-interview-questions)]
+Data normalization is very important preprocessing step, used to rescale values to fit in a specific range to assure better convergence during backpropagation. In general, it boils down to subtracting the mean of each data point and dividing by its standard deviation. If we don't do this then some of the features (those with high magnitude) will be weighted more in the cost function (if a higher-magnitude feature changes by 1%, then that change is pretty big, but for smaller features it's quite insignificant). The data normalization makes all features weighted equally.
 
-### Solution
-Solution is in the Question 6 section of the `pdf` file.
+#### 22) Why do we use convolutions for images rather than just FC layers? [[src](http://houseofbots.com/news-detail/2849-4-data-science-and-machine-learning-interview-questions)]
+Firstly, convolutions preserve, encode, and actually use the spatial information from the image. If we used only FC layers we would have no relative spatial information. Secondly, Convolutional Neural Networks (CNNs) have a partially built-in translation in-variance, since each convolution kernel acts as it's own filter/feature detector.
 
----
-## [Probability] Fair odds from unfair coin: Airbnb [Medium]
-Say you are given an unfair coin, with an unknown bias towards heads or tails. How can you generate fair odds using this coin?
+#### 23) What makes CNNs translation invariant? [[src](http://houseofbots.com/news-detail/2849-4-data-science-and-machine-learning-interview-questions)]
+As explained above, each convolution kernel acts as it's own filter/feature detector. So let's say you're doing object detection, it doesn't matter where in the image the object is since we're going to apply the convolution in a sliding window fashion across the entire image anyways.
 
-### Solution 
-Solution is in the Question 7 section of the `pdf` file. Code is [here.](https://github.com/adijo/data-science-prep/blob/master/code/unfair_coin.py)
+#### 24) Why do we have max-pooling in classification CNNs? [[src](http://houseofbots.com/news-detail/2849-4-data-science-and-machine-learning-interview-questions)]
+for a role in Computer Vision. Max-pooling in a CNN allows you to reduce computation since your feature maps are smaller after the pooling. You don't lose too much semantic information since you're taking the maximum activation. There's also a theory that max-pooling contributes a bit to giving CNNs more translation in-variance. Check out this great video from Andrew Ng on the [benefits of max-pooling](https://www.coursera.org/learn/convolutional-neural-networks/lecture/hELHk/pooling-layers).
 
----
-## [Probability] Ant Collision: Facebook [Medium]
-Three ants are sitting at the corners of an equilateral triangle. Each ant randomly picks a direction and starts moving along the edge of the triangle. What is the probability that none of the ants collide? Now, what if it is k ants on all k corners of an equilateral polygon?
+#### 25) Why do segmentation CNNs typically have an encoder-decoder style / structure? [[src](http://houseofbots.com/news-detail/2849-4-data-science-and-machine-learning-interview-questions)]
+The encoder CNN can basically be thought of as a feature extraction network, while the decoder uses that information to predict the image segments by "decoding" the features and upscaling to the original image size.
 
-### Solution 
-Solution is in the Question 8 section of the `pdf` file.
+#### 26) What is the significance of Residual Networks? [[src](http://houseofbots.com/news-detail/2849-4-data-science-and-machine-learning-interview-questions)]
+The main thing that residual connections did was allow for direct feature access from previous layers. This makes information propagation throughout the network much easier. One very interesting paper about this shows how using local skip connections gives the network a type of ensemble multi-path structure, giving features multiple paths to propagate throughout the network.
 
----
-## [Coding] Generating integer partitions: Stripe [Medium]
-Write a program to generate the partitions for a number `n`. A partition for `n` is a list of positive integers that sum up to `n.` For example: if `n = 4`, we want to return the following partitions: `[1,1,1,1], [1,1,2], [2,2], [1,3]`, and `[4]`. Note that a partition`[1,3]` is the same as `[3,1]` so only the former is included.
+#### 27) What is batch normalization and why does it work? [[src](http://houseofbots.com/news-detail/2849-4-data-science-and-machine-learning-interview-questions)]
+Training Deep Neural Networks is complicated by the fact that the distribution of each layer's inputs changes during training, as the parameters of the previous layers change. The idea is then to normalize the inputs of each layer in such a way that they have a mean output activation of zero and standard deviation of one. This is done for each individual mini-batch at each layer i.e compute the mean and variance of that mini-batch alone, then normalize. This is analogous to how the inputs to networks are standardized. How does this help? We know that normalizing the inputs to a network helps it learn. But a network is just a series of layers, where the output of one layer becomes the input to the next. That means we can think of any layer in a neural network as the first layer of a smaller subsequent network. Thought of as a series of neural networks feeding into each other, we normalize the output of one layer before applying the activation function, and then feed it into the following layer (sub-network).
 
-### Solution
-Code is [here.](https://github.com/adijo/data-science-prep/blob/master/code/integer_partitions.py)
+#### 28) Why would you use many small convolutional kernels such as 3x3 rather than a few large ones? [[src](http://houseofbots.com/news-detail/2849-4-data-science-and-machine-learning-interview-questions)]
+This is very well explained in the [VGGNet paper](https://arxiv.org/pdf/1409.1556.pdf). There are 2 reasons: First, you can use several smaller kernels rather than few large ones to get the same receptive field and capture more spatial context, but with the smaller kernels you are using less parameters and computations. Secondly, because with smaller kernels you will be using more filters, you'll be able to use more activation functions and thus have a more discriminative mapping function being learned by your CNN.
 
----
+#### 29) Why do we need a validation set and test set? What is the difference between them? [[src](https://www.toptal.com/machine-learning/interview-questions)]
+When training a model, we divide the available data into three separate sets:
 
-## [ML] Classification Metrics: Uber [Medium]
-Say you need to produce a binary classifier for fraud detection. What metrics would you look at, how is each defined, and what is the interpretation of each one?
+ - The training dataset is used for fitting the model’s parameters. However, the accuracy that we achieve on the training set is not reliable for predicting if the model will be accurate on new samples.
+ - The validation dataset is used to measure how well the model does on examples that weren’t part of the training dataset. The metrics computed on the validation data can be used to tune the hyperparameters of the model. However, every time we evaluate the validation data and we make decisions based on those scores, we are leaking information from the validation data into our model. The more evaluations, the more information is leaked. So we can end up overfitting to the validation data, and once again the validation score won’t be reliable for predicting the behaviour of the model in the real world.
+ - The test dataset is used to measure how well the model does on previously unseen examples. It should only be used once we have tuned the parameters using the validation set.
 
-### Solution
-Question 9 of the `pdf` file.
+So if we omit the test set and only use a validation set, the validation score won’t be a good estimate of the generalization of the model.
 
----
+#### 30) What is stratified cross-validation and when should we use it? [[src](https://www.toptal.com/machine-learning/interview-questions)]
+Cross-validation is a technique for dividing data between training and validation sets. On typical cross-validation this split is done randomly. But in stratified cross-validation, the split preserves the ratio of the categories on both the training and validation datasets.
 
-## [Statistics] Simulating a standard normal distribution: Uber [Hard]
-Say you are given a random Bernoulli trial generator. How would you generate values from a standard normal distribution?
+For example, if we have a dataset with 10% of category A and 90% of category B, and we use stratified cross-validation, we will have the same proportions in training and validation. In contrast, if we use simple cross-validation, in the worst case we may find that there are no samples of category A in the validation set.
 
-### Solution
-Code is [here.](https://github.com/adijo/data-science-prep/blob/master/code/Standard%20Normal%20From%20Bernoulli.ipynb)
+Stratified cross-validation may be applied in the following scenarios:
 
----
+ - On a dataset with multiple categories. The smaller the dataset and the more imbalanced the categories, the more important it will be to use stratified cross-validation.
+ - On a dataset with data of different distributions. For example, in a dataset for autonomous driving, we may have images taken during the day and at night. If we do not ensure that both types are present in training and validation, we will have generalization problems.
 
-## [Coding] Correlation by hand: Robinhood [Medium]
-This problem was asked by Robinhood.
+#### 31) Why do ensembles typically have higher scores than individual models? [[src](https://www.toptal.com/machine-learning/interview-questions)]
+An ensemble is the combination of multiple models to create a single prediction. The key idea for making better predictions is that the models should make different errors. That way the errors of one model will be compensated by the right guesses of the other models and thus the score of the ensemble will be higher.
 
-Write a program to calculate correlation (without any libraries except for math) for two lists X and Y.
+We need diverse models for creating an ensemble. Diversity can be achieved by:
+ - Using different ML algorithms. For example, you can combine logistic regression, k-nearest neighbors, and decision trees.
+ - Using different subsets of the data for training. This is called bagging.
+ - Giving a different weight to each of the samples of the training set. If this is done iteratively, weighting the samples according to the errors of the ensemble, it’s called boosting.
+Many winning solutions to data science competitions are ensembles. However, in real-life machine learning projects, engineers need to find a balance between execution time and accuracy.
 
-### Solution
-Code is [here.](https://github.com/adijo/data-science-prep/blob/master/code/correlation.py)
+#### 32) What is an imbalanced dataset? Can you list some ways to deal with it? [[src](https://www.toptal.com/machine-learning/interview-questions)]
+An imbalanced dataset is one that has different proportions of target categories. For example, a dataset with medical images where we have to detect some illness will typically have many more negative samples than positive samples—say, 98% of images are without the illness and 2% of images are with the illness.
 
----
+There are different options to deal with imbalanced datasets:
+ - Oversampling or undersampling. Instead of sampling with a uniform distribution from the training dataset, we can use other distributions so the model sees a more balanced dataset.
+ - Data augmentation. We can add data in the less frequent categories by modifying existing data in a controlled way. In the example dataset, we could flip the images with illnesses, or add noise to copies of the images in such a way that the illness remains visible.
+ - Using appropriate metrics. In the example dataset, if we had a model that always made negative predictions, it would achieve a precision of 98%. There are other metrics such as precision, recall, and F-score that describe the accuracy of the model better when using an imbalanced dataset.
 
-## [Probability] Flipping game: Facebook [Easy]
-You and your friend are playing a game. The two of you will continue to toss a coin until the sequence HH or TH shows up. If HH shows up first, you win. If TH shows up first, your friend wins. What is the probability of you winning?
+#### 33) Can you explain the differences between supervised, unsupervised, and reinforcement learning? [[src](https://www.toptal.com/machine-learning/interview-questions)]
+In supervised learning, we train a model to learn the relationship between input data and output data. We need to have labeled data to be able to do supervised learning.
 
-### Solution
-Question 10 of the `pdf` file and a simulation is [here](https://github.com/adijo/data-science-prep/blob/master/code/flipping_game.py)
+With unsupervised learning, we only have unlabeled data. The model learns a representation of the data. Unsupervised learning is frequently used to initialize the parameters of the model when we have a lot of unlabeled data and a small fraction of labeled data. We first train an unsupervised model and, after that, we use the weights of the model to train a supervised model.
 
---- 
+In reinforcement learning, the model has some input data and a reward depending on the output of the model. The model learns a policy that maximizes the reward. Reinforcement learning has been applied successfully to strategic games such as Go and even classic Atari video games.
 
-## [Probability] First to roll side k: Lyft [Medium]
-A and B are playing the following game: a number k from 1-6 is chosen, and A and B will toss a die until the first person sees the side k, and that person gets $100. How much is A willing to pay to play first in this game?
+#### 34) What is data augmentation? Can you give some examples? [[src](https://www.toptal.com/machine-learning/interview-questions)]
+Data augmentation is a technique for synthesizing new data by modifying existing data in such a way that the target is not changed, or it is changed in a known way.
 
-### Solution
-Question 11 of the `pdf` file.
+Computer vision is one of fields where data augmentation is very useful. There are many modifications that we can do to images:
+ - Resize
+ - Horizontal or vertical flip
+ - Rotate
+ - Add noise
+ - Deform
+ - Modify colors
+Each problem needs a customized data augmentation pipeline. For example, on OCR, doing flips will change the text and won’t be beneficial; however, resizes and small rotations may help.
 
----
+#### 35) What is Turing test? [[src](https://intellipaat.com/interview-question/artificial-intelligence-interview-questions/)]
+The Turing test is a method to test the machine’s ability to match the human level intelligence. A machine is used to challenge the human intelligence that when it passes the test, it is considered as intelligent. Yet a machine could be viewed as intelligent without sufficiently knowing about people to mimic a human.
 
-## [Coding] Max Sum Increasing Subsequence: Uber [Medium]
-Given a list of positive integers, return the maximum increasing subsequence, that is, the largest increasing subsequence within the array that has the maximum sum. Examples: if the input is [5, 4, 3, 2, 1] then return 5 (since no subsequence is increasing), if the input is [3, 2, 5, 7, 6] return 15 = 3 + 5 + 7, etc.
+#### 36) What is Precision?  
+Precision (also called positive predictive value) is the fraction of relevant instances among the retrieved instances  
+Precision = true positive / (true positive + false positive)  
+[[src]](https://en.wikipedia.org/wiki/Precision_and_recall)
 
-### Solution
-Code is [here.](https://github.com/adijo/data-science-prep/blob/master/code/max_sum_increasing_subsequence.py)
+#### 37) What is Recall?  
+Recall (also known as sensitivity) is the fraction of relevant instances that have been retrieved over the total amount of relevant instances.
+Recall = true positive / (true positive + false negative)  
+[[src]](https://en.wikipedia.org/wiki/Precision_and_recall)
 
----
+#### 38) Define F1-score. [[src](https://intellipaat.com/interview-question/artificial-intelligence-interview-questions/)]
+It is the weighted average of precision and recall. It considers both false positive and false negative into account. It is used to measure the model’s performance.  
+F1-Score = 2 * (precision * recall) / (precision + recall)
 
-## [Statistics] One extra coin toss: Robinhood [Medium]
+#### 39) What is cost function? [[src](https://intellipaat.com/interview-question/artificial-intelligence-interview-questions/)]
+Cost function is a scalar functions which Quantifies the error factor of the Neural Network. Lower the cost function better the Neural network. Eg: MNIST Data set to classify the image, input image is digit 2 and the Neural network wrongly predicts it to be 3
 
-A and B are playing a game where A has n+1 coins, B has n coins, and they each flip all of their coins. What is the probability that A will have more heads than B?
+#### 40) List different activation neurons or functions. [[src](https://intellipaat.com/interview-question/artificial-intelligence-interview-questions/)]
+ - Linear Neuron
+ - Binary Threshold Neuron
+ - Stochastic Binary Neuron
+ - Sigmoid Neuron
+ - Tanh function
+ - Rectified Linear Unit (ReLU)
 
-### Solution
-Question 12 of the `pdf` file.
+#### 41) Define Learning rate.
+Learning rate is a hyper-parameter that controls how much we are adjusting the weights of our network with respect the loss gradient. [[src](https://towardsdatascience.com/understanding-learning-rates-and-how-it-improves-performance-in-deep-learning-d0d4059c1c10)]
 
---- 
+#### 42) What is Momentum (w.r.t NN optimization)?
+Momentum lets the optimization algorithm remembers its last step, and adds some proportion of it to the current step. This way, even if the algorithm is stuck in a flat region, or a small local minimum, it can get out and continue towards the true minimum. [[src]](https://www.quora.com/What-is-the-difference-between-momentum-and-learning-rate)
 
-## [Probability] Labeling content: Facebook [Easy]
-Facebook has a content team that labels pieces of content on the platform as spam or not spam. 90% of them are diligent raters and will label 20% of the content as spam and 80% as non-spam. The remaining 10% are non-diligent raters and will label 0% of the content as spam and 100% as non-spam. Assume the pieces of content are labeled independently from one another, for every rater. Given that a rater has labeled 4 pieces of content as good, what is the probability that they are a diligent rater?
+#### 43) What is the difference between Batch Gradient Descent and Stochastic Gradient Descent?
+Batch gradient descent computes the gradient using the whole dataset. This is great for convex, or relatively smooth error manifolds. In this case, we move somewhat directly towards an optimum solution, either local or global. Additionally, batch gradient descent, given an annealed learning rate, will eventually find the minimum located in it's basin of attraction.
 
-### Solution
-Question 13 of the `pdf` file.
+Stochastic gradient descent (SGD) computes the gradient using a single sample. SGD works well (Not well, I suppose, but better than batch gradient descent) for error manifolds that have lots of local maxima/minima. In this case, the somewhat noisier gradient calculated using the reduced number of samples tends to jerk the model out of local minima into a region that hopefully is more optimal. [[src]](https://stats.stackexchange.com/questions/49528/batch-gradient-descent-versus-stochastic-gradient-descent)
 
---- 
+#### 44) Epoch vs Batch vs Iteration.
+Epoch: one forward pass and one backward pass of **all** the training examples  
+Batch: examples processed together in one pass (forward and backward)  
+Iteration: number of training examples / Batch size  
 
-## [Statistics] Coin flips needed to detect bias: Lyft [Medium]
-Say you have an unfair coin which will land on heads 60% of the time. How many coin flips are needed to detect that the coin is unfair?
+#### 45) What is vanishing gradient? [[src](https://intellipaat.com/interview-question/artificial-intelligence-interview-questions/)]
+As we add more and more hidden layers, back propagation becomes less and less useful in passing information to the lower layers. In effect, as information is passed back, the gradients begin to vanish and become small relative to the weights of the networks.
 
-### Solution
-Question 14 of the `pdf` file.
+#### 46) What are dropouts? [[src](https://intellipaat.com/interview-question/artificial-intelligence-interview-questions/)]
+Dropout is a simple way to prevent a neural network from overfitting. It is the dropping out of some of the units in a neural network. It is similar to the natural reproduction process, where the nature produces offsprings by combining distinct genes (dropping out others) rather than strengthening the co-adapting of them.
 
----
-## [Coding] Friendship distance: Facebook [Medium]
+#### 47) Define LSTM. [[src](https://intellipaat.com/interview-question/artificial-intelligence-interview-questions/)]
+Long Short Term Memory – are explicitly designed to address the long term dependency problem, by maintaining a state what to remember and what to forget.
 
-You have the entire social graph of Facebook users, with nodes representing users and edges representing friendships between users. Given the edges of the graph and the number of nodes, write a function to return the smallest number of friendships in-between two users.
+#### 48) List the key components of LSTM. [[src](https://intellipaat.com/interview-question/artificial-intelligence-interview-questions/)]
+ - Gates (forget, Memory, update & Read)
+ - tanh(x) (values between -1 to 1)
+ - Sigmoid(x) (values between 0 to 1)
 
-### Solution
-Code is [here.](https://github.com/adijo/data-science-prep/blob/master/code/social_graph.py)
+#### 49) List the variants of RNN. [[src](https://intellipaat.com/interview-question/artificial-intelligence-interview-questions/)]
+ - LSTM: Long Short Term Memory
+ - GRU: Gated Recurrent Unit
+ - End to End Network
+ - Memory Network
 
----
+#### 50) What is Autoencoder, name few applications. [[src](https://intellipaat.com/interview-question/artificial-intelligence-interview-questions/)]
+Auto encoder is basically used to learn a compressed form of given data. Few applications include
+ - Data denoising
+ - Dimensionality reduction
+ - Image reconstruction
+ - Image colorization
 
-## [Probability] Max Dice Roll: Spotify [Medium]
-A fair die is rolled `n` times. What is the probability that the largest number rolled is `r`, for each `r` in `1..6`?
+#### 51) What are the components of GAN? [[src](https://intellipaat.com/interview-question/artificial-intelligence-interview-questions/)]
+ - Generator
+ - Discriminator
 
-### Solution
-Question 15 of the `pdf` file.
+#### 52) What's the difference between boosting and bagging?
+Boosting and bagging are similar, in that they are both ensembling techniques, where a number of weak learners (classifiers/regressors that are barely better than guessing) combine (through averaging or max vote) to create a strong learner that can make accurate predictions. Bagging means that you take bootstrap samples (with replacement) of your data set and each sample trains a (potentially) weak learner. Boosting, on the other hand, uses all data to train each learner, but instances that were misclassified by the previous learners are given more weight so that subsequent learners give more focus to them during training. [[src]](https://www.quora.com/Whats-the-difference-between-boosting-and-bagging)
 
---- 
+#### 53) Explain how a ROC curve works. [[src]](https://www.springboard.com/blog/machine-learning-interview-questions/)
+The ROC curve is a graphical representation of the contrast between true positive rates and the false positive rate at various thresholds. It’s often used as a proxy for the trade-off between the sensitivity of the model (true positives) vs the fall-out or the probability it will trigger a false alarm (false positives).
 
-## [Coding] Mirror Binary Tree: Pinterest [Easy]
-Given a binary tree, write a function to determine whether the tree is a mirror image of itself. Two trees are a mirror image if their root values are the same and the left subtree is a mirror image of the right subtree.
+#### 54) What’s the difference between Type I and Type II error? [[src]](https://www.springboard.com/blog/machine-learning-interview-questions/)
+Type I error is a false positive, while Type II error is a false negative. Briefly stated, Type I error means claiming something has happened when it hasn’t, while Type II error means that you claim nothing is happening when in fact something is.
+A clever way to think about this is to think of Type I error as telling a man he is pregnant, while Type II error means you tell a pregnant woman she isn’t carrying a baby.
 
-### Solution
-Code is [here.](https://github.com/adijo/data-science-prep/blob/master/code/symmetric_tree.py)
+#### 55) What’s the difference between a generative and discriminative model? [[src]](https://www.springboard.com/blog/machine-learning-interview-questions/)
+A generative model will learn categories of data while a discriminative model will simply learn the distinction between different categories of data. Discriminative models will generally outperform generative models on classification tasks.
 
----
-## [Statistics] Customer Churn MLE: Airbnb [Medium]
-Say you model the lifetime for a set of customers using an exponential distribution with parameter `λ`, and you have the lifetime history (in months) of `n` customers. What is the MLE for `λ`?
-
-### Solution
-Question 16 in the `pdf` file
-
----
-## [Statistics] Server Wait Time: Dropbox [Medium]
-Dropbox has just started and there are two servers that service users: a faster server and a slower server. When a user is on the website, they are routed to either server randomly, and the wait time is exponentially distributed with two different parameters. What is the probability density of a random user's waiting time?
-
-### Solution
-Question 17 in the `pdf` file.
-
---- 
-## [Coding] Estimating Pi: Stripe [Medium]
-This problem was asked by Stripe.
-
-Estimate `π` using a Monte Carlo method. Hint: think about throwing darts on a square and seeing where they land within a circle.
-
-### Solution
-Code is [here.](https://github.com/adijo/data-science-prep/blob/master/code/estimate_pi.py)
-
----
-
-## [Probability] First toss: Lyft [Medium]
-This problem was asked by Lyft.
-
-A fair coin is tossed n times. Given that there were k heads in the n tosses, what is the probability that the first toss was heads?
-
-### Solution
-Question 18 in the `pdf` file.
-
----
-
-## [Coding] Topic Groups: Twitter [Medium]
-Say that there are n topics on Twitter and there is a notion of topics being related. Specifically, if topic A is related to topic B, and topic B is related to topic C, then topic A is indirectly related to topic C.
-
-Define a topic group to be any group of topics that either directly or indirectly related. Given an n by n adjacency matrix N, where `N[i][j] = 1` if topic `i` and topic are `j` related and 0 otherwise, write a function to determine how many topic groups are there.
-
-### Solution
-Code is [here.](https://github.com/adijo/data-science-prep/blob/master/code/topic_groups.py)
-
----
-
-## [Probability] Coin Recursion: Robinhood [Medium]
-
-A biased coin, with probability `p` of landing on heads, is tossed `n` times. Write a recurrence relation for the probability that the total number of heads after `n` tosses is even.
-
-### Solution
-Question 19 of the `pdf` file has the solution and an implementation of the solution is [here.](https://github.com/adijo/data-science-prep/blob/master/code/even_heads.py)
-
----
-
-## [Coding] Permutations: Dropbox [Medium]
-Given `n` distinct integers, write a function to generate all permutations of those integers.
-
-### Solution
-Code is [here.](https://github.com/adijo/data-science-prep/blob/master/code/permutations.py)
-
----
-
-## [Probability] Random Testing: Lyft [Easy]
-Say that you are pushing a new feature `X` out. You have `1000` users and each user is either a fan or not a fan of X, at random. There are `50` users of `1000` that do not like `X.` You will decide whether to ship the feature or not based on sampling 5 users independently and if they all like the feature, you will ship it. What is the probability that you will ship the feature?
-
-### Solution
-Question 20 of the `pdf` file.
-
----
-
-## [Coding] All Combinations: Twitch [Medium] 
-Given an integer n and an integer k, output a list of all of the combinations of k numbers from 1 to n.
-
-For example, if the `n = 3`, and `k = 2` then return: `[1, 2], [1, 3], [2, 3]`.
-
-### Solution
-Code is [here.](https://github.com/adijo/data-science-prep/blob/master/code/all_combinations.py)
-
----
-
-## [Coding] Obstacle Paths: Twitch [Medium]
-
-You are given an `m` by `n` matrix with `0s` and `1s`, where a `1` represents an obstacle and a `0` represents no obstacle. Determine the number of ways to navigate from the top-left corner of the matrix to the bottom right corner given that at any point in time there is only a move down or to the right as long as there is not an obstacle in that spot.
-
-For example, if the matrix is given by: `[[0, 0, 0], [1, 1, 0], [0, 1, 0]]` then you should return `1` since there is exactly one path.
-
-### Solution
-Code is [here.](https://github.com/adijo/data-science-prep/blob/master/code/obstacle_path.py)
-
---- 
-
-## [Probability] Fan Groups: Snapchat [Easy]
-You are testing a new feature with various sample groups of three people. Assume that each person is equally likely to be a fan or not a fan of the feature. What is the probability that a randomly chosen group has exactly one fan, given that there is a fan among the three?
-
-### Solution
-Question 21 of the `pdf` file.
-
---- 
-
-## [Probability] Hit Show: Netflix [Hard]
-
-Before a show is released, it is shown to several in-house raters. You assume there are two types of shows: hits, which have an `80%` chance of being liked by any viewer, and misses, which have a `20%` chance of being liked by any viewer. There is currently a new show which you believe has a prior distribution of `60%` being a hit, and `40%` being a miss. Given that `8` raters rated the show and `6` of the `8` liked the show, what is the new posterior distribution of being a hit or miss?
-
-### Solution
-Question 22 of the `pdf` file.
-
----
-
-## [Coding] Palindrome Counting: Opendoor [Medium]
-
-Given a string, return the count of substrings within the string that are palindromes.
-
-For example, if input is `aba`: return `4`, since the palindromes are: `a`, `b`, `a`, and `aba`.
-
-### Solution
-Code is [here.](https://github.com/adijo/data-science-prep/blob/master/code/palindrome_counting.py)
-
----
-
-## [Coding] Intersection of Two Arrays: Pinterest [Easy]
-
-Given two arrays, write a function to get the intersection of the two.
-
-For example, if `A = [2, 4, 1, 5, 0]`, and `B = [3, 4, 5]` then you should return `[4, 5].`
-
-### Solution
-Code is [here.](https://github.com/adijo/data-science-prep/blob/master/code/intersection_of_two_arrays.py)
-
----
-
-## [Probability] Waiting Time: Twilio [Easy]
-
-You are modeling the wait time a customer has for a support call as exponentially distributed with a mean of `10` minutes. Suppose a customer calls in and is told that all lines are currently busy, and the most recent last spot was occupied `5` minutes ago. What is the probability that the current customer will need to wait no more than another `5` minutes?
-
-### Solution
-Question 23 of the `pdf` file.
-
----
-
-## [Probability] Favorite Show: Disney [Medium]
-Alice and Bob are choosing their top `3` shows from a list of `50` shows. Assume that they choose independently of one another. Being relatively new to Hulu, assume also that they choose randomly within the `50` shows. What is the expected number of shows they have in common, and what is the probability that they do not have any shows in common?
-
-### Solution
-Question 24 of the `pdf` file and the simulation is [here.](https://github.com/adijo/data-science-prep/blob/master/code/favorite_show.py)
-
----
-
-## [Coding] Splitting Parentheses: Twitter [Medium]
-Given a string with lowercase characters and left and right parentheses, remove the minimum number of parentheses so that the string is valid.
-
-For example, if the string is `)a(b((cd)e(f)g)` then return `ab((cd)e(f)g)`
-
-### Solution
-Code is [here.](https://github.com/adijo/data-science-prep/blob/master/code/splitting_parentheses.py)
-
----
-
-## [Statistics] Bernoulli Samples: Stripe [Medium]
-Consider a Bernoulli random variable with parameter `p.` Say you observe the following samples: `[1, 0, 1, 1, 1]`. What is the log likelihood function for `p` and what is the MLE of `p`?
-
-### Solution
-Question 25 of the `pdf` file.
-
----
-
-## [Coding] Palindromic Subset: Airbnb [Medium]
-
-Given a number `x`, define a palindromic subset as any subsequence within `x` that is a palindrome. Write a function that returns the number of digits of the longest palindromic subset.
-
-For example, if `x` is `93567619` then you should return `5` since the longest subset would be `96769`, which is a `5` digit number.
-
-### Solution
-Code is [here.](https://github.com/adijo/data-science-prep/blob/master/code/palindromic_subset.py)
+## Contributions
+Contributions are most welcomed.
+ 1. Fork the repository.
+ 2. Commit your *questions* or *answers*.
+ 3. Open **pull request**.
